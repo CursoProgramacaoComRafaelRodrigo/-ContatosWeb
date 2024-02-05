@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Novo";
+}
+
+<form method="post">
+    <input class="form-control" type="text" placeholder="Informe o nome do contato" name="nome" required="required"/>
+    <br />
+    <input class="form-control" type="text" placeholder="Informe o telefone do contato" name="telefone" required="required" />
+    <br />
+    <input class="form-control" type="email" placeholder="Informe o email do contato" name="email" required="required" />
+    <br />
+    <input type="submit" value="Adicionar" class="btn btn-primary"/>
+    <a class="btn btn-danger" asp-area="" asp-controller="Home" asp-action="Index">Cancelar</a>
+</form>
