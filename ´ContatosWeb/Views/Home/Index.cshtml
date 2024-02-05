@@ -1,8 +1,37 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Contatos";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@model ContatoModels
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>Telefone</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @{
+            foreach (var c in Model.GetContatos())
+            {
+                <tr>
+                    @if (c.Id < 10)
+                    {
+                        <td style="color:white;background-color:tomato">0 @c.Id</td>
+                    }
+                    else
+                    {
+                        <td style="color:white;background-color:tomato">@c.Id</td>
+                    }
+                    <td>@c.Nome</td>
+                    <td><a href="mailto:@c.Email">@c.Email</a></td>
+                    <td>@c.Telefone</td>
+                </tr>
+            }
+        }
+    </tbody>
+
+</table>
